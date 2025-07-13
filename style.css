@@ -1,0 +1,253 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+:root {
+  --ff-sans-normal: "Barlow", sans-serif;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: url(assets/home/background-home-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-links span {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 34px 80px;
+  padding-bottom: 0;
+  width: 100%;
+  position: relative;
+  left: 69px;
+  gap: 60px;
+  background-color: rgba(141, 137, 137, 0.068);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10);
+  padding-left: 90px;
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 100;
+  gap: 0.4em; /* or adjust as needed */
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 30px;
+}
+
+.nav-links a:hover:not(.active) {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 30px;
+}
+
+.nav-num {
+  font-weight: bold; /* optional, for emphasis */
+  letter-spacing: 1px; /* optional, for style */
+}
+.nav-links li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.header hr {
+  width: 1000px;
+  border: none;
+  border-top: 1px solid #706363;
+  position: relative;
+  left: 84px;
+  z-index: 2;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+.main-content {
+  width: 50%;
+  margin-top: 80px;
+  color: white;
+}
+.main-content h2 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 0;
+  color: rgb(163, 161, 161);
+  font-family: var(--ff-sans-normal);
+}
+
+.main-content h1 {
+  font-size: 122px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.main-content p {
+  line-height: 33px;
+  width: 77%;
+  font-size: 15px;
+  color: rgb(163, 161, 161);
+}
+.explore {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin-top: 110px;
+}
+.explore a {
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  padding: 110px 80px;
+  border-radius: 1000px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* prevent horizontal scroll */
+  }
+  .container {
+    margin: 0;
+    padding: 0;
+    background-image: url(assets/home/background-home-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  .nav-links {
+    position: absolute;
+    top: -15px; /* just below your header (≈ header height) */
+    right: 10px;
+    width: 100%; /* or whatever fits your design */
+
+    padding-bottom: 540px;
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 10;
+    height: 200px;
+    padding-top: 140px;
+    padding-left: 30px;
+    margin-left: 60px;
+    position: fixed;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-icon {
+    display: flex; /* show the menu toggle */
+    align-items: center;
+    z-index: 20; /* above the nav-links */
+  }
+  /* optionally shrink the logo so it all fits in one row */
+  .logo img {
+    width: 32px;
+  }
+  #closeMenu {
+    z-index: 2;
+    position: relative;
+    right: 8px;
+  }
+  .header {
+    width: 90%; /* span the full viewport */
+    padding: 10px 10px; /* give it some breathing room */
+    align-items: center; /* vertically center logo & menu */
+  }
+  .navbar {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .header hr {
+    display: none;
+  }
+  .main {
+    display: flex;
+
+    flex-direction: column;
+    width: 90%;
+  }
+  .main-content {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .main-content h2 {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+  }
+  .main-content h1 {
+    font-size: 90px;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-weight: 100;
+  }
+  .main-content p {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .explore {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .explore a {
+    padding: 130px 92px;
+    font-size: 20px;
+    border-radius: 1000px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    text-decoration: none;
+  }
+}
